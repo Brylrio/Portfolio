@@ -204,3 +204,19 @@ section.contact {
   background-color: var(--secondary);
   height: 100vh;
 }/*# sourceMappingURL=styles.css.map */
+
+footer {
+  width: 100%;
+  background-color: var(--secondary);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: .7rem;
+
+}
+
+div.copyright {
+  color: var(--hover);
+}
