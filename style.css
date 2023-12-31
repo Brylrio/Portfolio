@@ -181,7 +181,7 @@ section.skills div.p-language {
   gap: 3rem;
 }
 section.skills div.p-language div.p-items {
-  width: 100px;
+  width: 11rem;
   height: 8rem;
   border: 1px solid var(--fourth);
   border-radius: 0.5rem;
