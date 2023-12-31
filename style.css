@@ -217,6 +217,12 @@ section.contact {
 
 }
 
+.footer li {
+  width: 3rem;
+  padding: 1rem;
+  object-fit: contain;
+}
+
 div.copyright {
   color: var(--hover);
 }
