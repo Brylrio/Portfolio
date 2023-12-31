@@ -217,7 +217,7 @@ section.contact {
 
 }
 
-.footer li {
+.footer li img{
   width: 3rem;
   padding: 1rem;
   object-fit: contain;
