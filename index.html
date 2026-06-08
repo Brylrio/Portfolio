@@ -5,12 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Bryan Laurio</title>
+    <style>
+      /* Enables smooth scrolling across the entire site */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Fixes the atom background to the screen */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Pushes it behind content */
+        background-color: #0f172a; /* Adjust this to match your desired dark mode layout color */
+      }
+    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Background container for the atom animation -->
+    <div id="particles-js"></div>
+
     <header class="header">
       <h1 class="site-title">portfolio</h1>
       <ul class="nav_links">
+        <!-- Added id="home" anchor compatibility -->
         <li><a href="#home">home</a></li>
         <li><a href="#about">about</a></li>
         <li><a href="#skills">skills</a></li>
@@ -19,7 +40,8 @@
       </ul>
     </header>
     <main>
-      <section class="homepage">
+      <!-- Added id="home" to match your nav link -->
+      <section class="homepage" id="home">
         <h2 class="homepage-title">Hi I'm <span>Bryan Laurio</span></h2>
         <p>
           I'm a Web Developer who can help you <br />
@@ -27,7 +49,7 @@
         </p>
         <div class="buttons">
           <button><a href="#contact">Hire me</a></button>
-          <button src="./files/LAURIO-Bryan C..pdf">Download my CV</button>
+          <button src="#">Download my CV</button>
         </div>
       </section>
       <section class="about" id="about">
@@ -35,10 +57,11 @@
           <h2>About me</h2>
           <h3>Bryan Laurio:</h3>
           <p>
-            I'm a Web Developer,I can do both Front-end and <br />
-            Back-end Development, I realy love building website, <br />
-            and i always willing to learn when come to new technologies <br />
-            that can improve my knowlege and skills.
+            I'm a Web Developer, I can do both Front-end and <br />
+            Back-end Development, I really love building websites, <br />
+            and I'm always willing to learn when it comes to new technologies
+            <br />
+            that can improve my knowledge and skills.
           </p>
           <button><a href="#skills">Learn more</a></button>
         </div>
@@ -71,10 +94,10 @@
           </div>
         </div>
       </section>
-      <!-- <section class="projects">
-            <h2>project</h2>
-            <p>This page is currently empty</p>
-        </section> -->
+      <section class="projects" id="projects">
+        <h2>project</h2>
+        <p>This page is currently empty</p>
+      </section>
     </main>
     <footer>
       <div class="footer" id="contact">
@@ -92,9 +115,71 @@
       </div>
       <p>
         Copyright &copy; 2023 <br />
-        All right reserved: Bryan C. Laurio
+        All rights reserved: Bryan C. Laurio
       </p>
     </footer>
+
+    <!-- Particles.js Library CDN -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- Your local javascript file -->
     <script src="js/index.js"></script>
+    <script>
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 80, // Number of atoms
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: '#00dbde', // Atom color (Change to your brand color)
+          },
+          shape: {
+            type: 'circle',
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+          },
+          size: {
+            value: 4, // Atom node size
+            random: true,
+          },
+          line_linked: {
+            enable: true, // Connects atoms with lines
+            distance: 150,
+            color: '#fc00ff', // Line connection color
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 3, // Floating speed
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false,
+          },
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'grab', // Atoms connect to your mouse cursor on hover
+            },
+            onclick: {
+              enable: true,
+              mode: 'push', // Adds more atoms on mouse click
+            },
+            resize: true,
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
   </body>
 </html>
