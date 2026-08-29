@@ -158,42 +158,54 @@ section.about div.home-right div.round img {
   height: 100%;
   border-radius: inherit;
 }
-
-/* // skills  */
 section.skills {
   background-color: var(--background-color);
+}
+
+section.skills h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--fourth);
+  padding-top: 5rem;
+}
+/* // skills  */
+div.myskills {
+  background-color: var(--background-color);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   gap: 5rem;
+  padding: 10rem;
 }
 
 div.skills-section,
 div.tools-section {
   background-color: var(--box-color);
-  width: 40%;
-  height: 50%;
+  width: 50%;
+  height: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+div.skills-section div.icon,
+div.tools-section div.icon {
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--box-color);
   border-radius: 1rem;
 }
 
-.skill-bar {
-  background: #e0e0e0;
-  border-radius: 10px;
-  height: 20px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.skill-per {
-  background: #4caf50;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  color: white;
-  text-align: right;
-  padding-right: 5px;
-  transition: width 1s ease-in-out;
+div.skills-section div.icon img,
+div.tools-section div.icon img {
+  width: 6rem;
+  height: auto;
+  padding: 1rem;
 }
 .footer {
   width: 100%;
