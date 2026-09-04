@@ -230,34 +230,54 @@ section.skills h2 {
 
 div.myskills {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem;
   width: 100%;
-  height: 50vh;
-  padding: 10rem;
+  padding: 6rem 4rem;
   background-color: var(--background-color);
 }
 
 div.skills-section,
 div.tools-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 50%;
   height: auto;
   padding: 2rem;
   background-color: var(--box-color);
+  border: 1px solid transparent;
   border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+div.skills-section:hover,
+div.tools-section:hover {
+  border-color: var(--fourth);
 }
 
 div.skills-section div.icon,
 div.tools-section div.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 6rem;
   height: 6rem;
   background-color: var(--box-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+div.skills-section div.icon:hover,
+div.tools-section div.icon:hover {
+  transform: translateY(-6px);
+  border-color: var(--fourth);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
 
 div.skills-section div.icon img,
@@ -265,6 +285,119 @@ div.tools-section div.icon img {
   width: 6rem;
   height: auto;
   padding: 1rem;
+}
+
+/* ==========================================================================
+   Services Section
+   ========================================================================== */
+
+section.services {
+  padding: 6rem 4rem;
+  background-color: var(--secondary);
+}
+
+section.services h2 {
+  padding-bottom: 3rem;
+  color: var(--primary);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section.services div.my-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section.services div.my-services > div {
+  padding: 2rem;
+  background-color: var(--box-color);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+section.services div.my-services > div:hover {
+  border-color: var(--fourth);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+section.services div.my-services > div ul {
+  list-style: none;
+  color: var(--primary);
+}
+
+section.services div.my-services > div ul li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+section.services div.my-services > div ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--fourth);
+}
+
+/* ==========================================================================
+   Project Section
+   ========================================================================== */
+
+section.project {
+  padding: 6rem 4rem;
+  background-color: var(--background-color);
+}
+
+section.project h2 {
+  padding-bottom: 3rem;
+  color: var(--fourth);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section.project div.my-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section.project div.my-projects div.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 1rem;
+  background-color: var(--box-color);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+section.project div.my-projects div.list:hover {
+  border-color: var(--fourth);
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+section.project div.my-projects div.list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+section.project div.my-projects div.list a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* ==========================================================================
@@ -305,6 +438,19 @@ footer.footer p {
   div.skills-section,
   div.tools-section {
     width: 80%;
+  }
+
+  section.services,
+  section.project {
+    padding: 4rem 2rem;
+  }
+
+  section.services div.my-services {
+    gap: 1.5rem;
+  }
+
+  section.project div.my-projects {
+    gap: 1rem;
   }
 }
 
@@ -351,6 +497,24 @@ footer.footer p {
   div.skills-section,
   div.tools-section {
     width: 100%;
+  }
+
+  section.services,
+  section.project {
+    padding: 4rem 1.5rem;
+  }
+
+  section.services h2,
+  section.project h2 {
+    padding-bottom: 2rem;
+  }
+
+  section.services div.my-services {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  section.project div.my-projects {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
 }
 
@@ -426,5 +590,28 @@ footer.footer p {
     gap: 1.5rem;
     padding: 1.5rem;
     text-align: center;
+  }
+
+  section.services,
+  section.project {
+    padding: 3rem 1.5rem;
+  }
+
+  section.services div.my-services {
+    grid-template-columns: 1fr;
+  }
+
+  section.services div.my-services > div ul li {
+    font-size: 0.9rem;
+  }
+
+  section.project div.my-projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  section.project div.my-projects div.list {
+    padding: 0.75rem;
+    border-radius: 0.6rem;
   }
 }
