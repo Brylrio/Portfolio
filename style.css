@@ -39,6 +39,7 @@ body {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   position: sticky;
@@ -245,15 +246,15 @@ div.tools-section {
 
 div.skills-section div.icon,
 div.tools-section div.icon {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   background-color: var(--box-color);
   border-radius: 1rem;
 }
 
 div.skills-section div.icon img,
 div.tools-section div.icon img {
-  width: 6rem;
+  width: 4rem;
   height: auto;
   padding: 1rem;
 }
@@ -275,4 +276,137 @@ footer.footer {
 
 footer.footer p {
   color: var(--primary);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  section.homepage,
+  section.about {
+    padding: 4rem 2rem;
+  }
+
+  div.myskills {
+    gap: 2rem;
+    padding: 4rem 2rem;
+  }
+
+  div.skills-section,
+  div.tools-section {
+    width: 80%;
+  }
+}
+
+/* Tablets / large phones (landscape) */
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
+  header ul.nav_links li {
+    padding: 0.5rem;
+  }
+
+  section.homepage h2 {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+
+  section.about {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    height: auto;
+    padding: 4rem 2rem;
+  }
+
+  section.about div.left {
+    text-align: center;
+  }
+
+  section.about div.left h2 {
+    margin-top: 0;
+  }
+
+  section.about div.home-right div.round {
+    margin-top: 0;
+  }
+
+  div.myskills {
+    flex-direction: column;
+    height: auto;
+  }
+
+  div.skills-section,
+  div.tools-section {
+    width: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1.site-title img {
+    width: 3rem;
+    height: 1.5rem;
+  }
+
+  header ul.nav_links li {
+    padding: 0.4rem;
+  }
+
+  header ul.nav_links li a {
+    font-size: 0.85rem;
+  }
+
+  section.homepage,
+  section.about {
+    padding: 3rem 1.5rem;
+  }
+
+  section.homepage h2 {
+    font-size: 1.75rem;
+  }
+
+  section.homepage div.buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  section.homepage div.buttons button {
+    width: 100%;
+  }
+
+  section.about div.left h2 {
+    font-size: 1.5rem;
+  }
+
+  section.about div.left h3 {
+    font-size: 1.2rem;
+  }
+
+  section.about div.home-right div.round {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  div.myskills {
+    padding: 3rem 1.5rem;
+  }
+
+  div.skills-section,
+  div.tools-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
 }
