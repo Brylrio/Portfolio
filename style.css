@@ -137,23 +137,82 @@ header button.nav-close {
    ========================================================================== */
 
 section.homepage {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   height: 100vh;
   padding: 10rem;
   background-color: var(--background-color);
 }
 
+section.homepage::before {
+  content: "";
+  position: absolute;
+  top: -12rem;
+  left: 50%;
+  width: 40rem;
+  height: 40rem;
+  background: radial-gradient(circle, rgba(181, 137, 0, 0.18), transparent 70%);
+  filter: blur(10px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.homepage h2,
+section.homepage p,
+section.homepage div.buttons {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+section.homepage p {
+  animation-delay: 0.15s;
+}
+
+section.homepage div.buttons {
+  animation-delay: 0.3s;
+}
+
 section.homepage h2 {
   font-size: 3rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
   color: var(--third);
+  text-align: center;
 }
 
 section.homepage h2 span {
+  position: relative;
+  display: inline-block;
   color: var(--fourth);
+}
+
+section.homepage h2 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 3px;
+  background-color: var(--fourth);
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
 section.homepage p {
@@ -173,26 +232,47 @@ section.homepage div.buttons {
 }
 
 section.homepage div.buttons button {
+  position: relative;
   width: 150px;
   height: 50px;
+  overflow: hidden;
   font-family: inherit;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: var(--fourth);
   background-color: transparent;
   border: 1px solid var(--fourth);
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+section.homepage div.buttons button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--fourth);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
 }
 
 section.homepage div.buttons button a {
+  position: relative;
   color: inherit;
   text-decoration: none;
 }
 
 section.homepage div.buttons button:hover {
-  color: var(--third);
-  background-color: var(--fourth);
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+section.homepage div.buttons button:hover::before {
+  transform: scaleX(1);
 }
 
 /* ==========================================================================
@@ -452,12 +532,12 @@ section.project div.my-projects div.list a img {
 
 section.contact {
   padding: 6rem 4rem;
-  background-color: var(--secondary);
+  background-color: var(--background-color);
 }
 
 section.contact > h2 {
   padding-bottom: 3rem;
-  color: var(--primary);
+  color: var(--fourth);
   text-align: center;
   text-transform: uppercase;
 }
@@ -521,7 +601,7 @@ footer.footer {
   padding: 1rem;
   font-size: 0.7rem;
   text-align: center;
-  background-color: var(--background-color);
+  background-color: var(--secondary);
 }
 
 footer.footer p {
@@ -584,11 +664,12 @@ footer.footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     width: 70%;
     max-width: 300px;
     height: 100vh;
+    padding-top: 5rem;
     background-color: var(--secondary);
     transition: right 0.3s ease-in-out;
     z-index: 99;
