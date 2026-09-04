@@ -452,12 +452,12 @@ section.project div.my-projects div.list a img {
 
 section.contact {
   padding: 6rem 4rem;
-  background-color: var(--background-color);
+  background-color: var(--secondary);
 }
 
 section.contact > h2 {
   padding-bottom: 3rem;
-  color: var(--fourth);
+  color: var(--primary);
   text-align: center;
   text-transform: uppercase;
 }
@@ -521,7 +521,7 @@ footer.footer {
   padding: 1rem;
   font-size: 0.7rem;
   text-align: center;
-  background-color: var(--secondary);
+  background-color: var(--background-color);
 }
 
 footer.footer p {
