@@ -33,6 +33,12 @@ body {
   font-family: var(--font);
 }
 
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  line-height: 1.6;
+}
+
 /* ==========================================================================
    Header / Navigation
    ========================================================================== */
@@ -105,6 +111,7 @@ section.homepage h2 span {
 }
 
 section.homepage p {
+  max-width: 40rem;
   padding-top: 1rem;
   padding-bottom: 2rem;
   font-size: 1rem;
@@ -171,6 +178,7 @@ section.about div.left h3 {
 }
 
 section.about div.left p {
+  max-width: 30rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1rem;
@@ -246,15 +254,15 @@ div.tools-section {
 
 div.skills-section div.icon,
 div.tools-section div.icon {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   background-color: var(--box-color);
   border-radius: 1rem;
 }
 
 div.skills-section div.icon img,
 div.tools-section div.icon img {
-  width: 4rem;
+  width: 6rem;
   height: auto;
   padding: 1rem;
 }
@@ -374,6 +382,11 @@ footer.footer p {
     font-size: 1.75rem;
   }
 
+  section.homepage p {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
   section.homepage div.buttons {
     flex-direction: column;
     width: 100%;
@@ -385,6 +398,11 @@ footer.footer p {
 
   section.about div.left h2 {
     font-size: 1.5rem;
+  }
+
+  section.about div.left p {
+    max-width: 100%;
+    font-size: 0.85rem;
   }
 
   section.about div.left h3 {
